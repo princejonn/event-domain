@@ -1,0 +1,445 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ViewDomain when failing to handle an event should emit the error and not the event 1`] = `
+Array [
+  Array [
+    Object {
+      "error": [Error: handler error],
+    },
+  ],
+]
+`;
+
+exports[`ViewDomain when failing to handle an event with a permanent domain error should publish non-mandatory error event to message bus 1`] = `
+Array [
+  DomainEvent {
+    "aggregate": Object {
+      "context": "context",
+      "id": "id",
+      "name": "name",
+    },
+    "causationId": "e64b576a-022e-4dd4-8c97-32408012f8d1",
+    "correlationId": "e64b576a-022e-4dd4-8c97-32408012f8d1",
+    "data": Object {
+      "error": [TestError: handler error],
+      "message": DomainEvent {
+        "aggregate": Object {
+          "context": "context",
+          "id": "id",
+          "name": "name",
+        },
+        "causationId": "e64b576a-022e-4dd4-8c97-32408012f8d1",
+        "correlationId": "e64b576a-022e-4dd4-8c97-32408012f8d1",
+        "data": Object {
+          "data": "data",
+        },
+        "delay": 0,
+        "id": "e64b576a-022e-4dd4-8c97-32408012f8d1",
+        "mandatory": false,
+        "name": "eventName",
+        "timestamp": 2022-01-01T08:00:00.000Z,
+        "type": "event",
+      },
+    },
+    "delay": 0,
+    "id": "e64b576a-022e-4dd4-8c97-32408012f8d1.TestError",
+    "mandatory": false,
+    "name": "TestError",
+    "timestamp": 2022-01-01T08:00:00.000Z,
+    "type": "event",
+  },
+]
+`;
+
+exports[`ViewDomain when handling an event on a destroyed domain should publish ViewAlreadyDestroyedError to message bus 1`] = `
+Array [
+  DomainEvent {
+    "aggregate": Object {
+      "context": "context",
+      "id": "id",
+      "name": "name",
+    },
+    "causationId": "e64b576a-022e-4dd4-8c97-32408012f8d1",
+    "correlationId": "e64b576a-022e-4dd4-8c97-32408012f8d1",
+    "data": Object {
+      "error": [ViewDestroyedError: View is destroyed],
+      "message": DomainEvent {
+        "aggregate": Object {
+          "context": "context",
+          "id": "id",
+          "name": "name",
+        },
+        "causationId": "e64b576a-022e-4dd4-8c97-32408012f8d1",
+        "correlationId": "e64b576a-022e-4dd4-8c97-32408012f8d1",
+        "data": Object {
+          "data": "data",
+        },
+        "delay": 0,
+        "id": "e64b576a-022e-4dd4-8c97-32408012f8d1",
+        "mandatory": false,
+        "name": "eventName",
+        "timestamp": 2022-01-01T08:00:00.000Z,
+        "type": "event",
+      },
+    },
+    "delay": 0,
+    "id": "e64b576a-022e-4dd4-8c97-32408012f8d1.ViewDestroyedError",
+    "mandatory": false,
+    "name": "ViewDestroyedError",
+    "timestamp": 2022-01-01T08:00:00.000Z,
+    "type": "event",
+  },
+]
+`;
+
+exports[`ViewDomain when handling an event should emit the handled event and view 1`] = `
+Array [
+  Array [
+    Object {
+      "error": null,
+      "event": DomainEvent {
+        "aggregate": Object {
+          "context": "context",
+          "id": "id",
+          "name": "name",
+        },
+        "causationId": "e64b576a-022e-4dd4-8c97-32408012f8d1",
+        "correlationId": "e64b576a-022e-4dd4-8c97-32408012f8d1",
+        "data": Object {
+          "data": "data",
+        },
+        "delay": 0,
+        "id": "e64b576a-022e-4dd4-8c97-32408012f8d1",
+        "mandatory": false,
+        "name": "eventName",
+        "timestamp": 2022-01-01T08:00:00.000Z,
+        "type": "event",
+      },
+      "view": Object {
+        "causationList": Array [
+          "e64b576a-022e-4dd4-8c97-32408012f8d1",
+        ],
+        "context": "context",
+        "destroyed": false,
+        "id": "id",
+        "metaState": Object {
+          "data": Object {
+            "r": false,
+            "t": 2022-01-01T08:00:00.000Z,
+            "v": Object {
+              "data": "data",
+            },
+          },
+        },
+        "name": "name",
+        "revision": 0,
+        "state": Object {
+          "data": Object {
+            "data": "data",
+          },
+        },
+      },
+    },
+  ],
+]
+`;
+
+exports[`ViewDomain when handling an event should save the view to the view store 1`] = `
+Object {
+  "context.name.id": Object {
+    "causationList": Array [
+      "e64b576a-022e-4dd4-8c97-32408012f8d1",
+    ],
+    "context": "context",
+    "destroyed": false,
+    "id": "id",
+    "metaState": Object {
+      "data": Object {
+        "r": false,
+        "t": 2022-01-01T08:00:00.000Z,
+        "v": Object {
+          "data": "data",
+        },
+      },
+    },
+    "name": "name",
+    "revision": 1,
+    "state": Object {
+      "data": Object {
+        "data": "data",
+      },
+    },
+  },
+}
+`;
+
+exports[`ViewDomain when handling an event twice should save only one view to the view store 1`] = `
+Object {
+  "context.name.id": Object {
+    "causationList": Array [
+      "e64b576a-022e-4dd4-8c97-32408012f8d1",
+    ],
+    "context": "context",
+    "destroyed": false,
+    "id": "id",
+    "metaState": Object {
+      "data": Object {
+        "r": false,
+        "t": 2022-01-01T08:00:00.000Z,
+        "v": Object {
+          "data": "data",
+        },
+      },
+    },
+    "name": "name",
+    "revision": 1,
+    "state": Object {
+      "data": Object {
+        "data": "data",
+      },
+    },
+  },
+}
+`;
+
+exports[`ViewDomain when handling an event with a created [false] condition should publish ViewAlreadyCreatedError to message bus 1`] = `
+Array [
+  DomainEvent {
+    "aggregate": Object {
+      "context": "context",
+      "id": "id",
+      "name": "name",
+    },
+    "causationId": "e64b576a-022e-4dd4-8c97-32408012f8d1",
+    "correlationId": "e64b576a-022e-4dd4-8c97-32408012f8d1",
+    "data": Object {
+      "error": [ViewAlreadyCreatedError: View has already been created],
+      "message": DomainEvent {
+        "aggregate": Object {
+          "context": "context",
+          "id": "id",
+          "name": "name",
+        },
+        "causationId": "e64b576a-022e-4dd4-8c97-32408012f8d1",
+        "correlationId": "e64b576a-022e-4dd4-8c97-32408012f8d1",
+        "data": Object {
+          "data": "data",
+        },
+        "delay": 0,
+        "id": "e64b576a-022e-4dd4-8c97-32408012f8d1",
+        "mandatory": false,
+        "name": "eventName",
+        "timestamp": 2022-01-01T08:00:00.000Z,
+        "type": "event",
+      },
+    },
+    "delay": 0,
+    "id": "e64b576a-022e-4dd4-8c97-32408012f8d1.ViewAlreadyCreatedError",
+    "mandatory": false,
+    "name": "ViewAlreadyCreatedError",
+    "timestamp": 2022-01-01T08:00:00.000Z,
+    "type": "event",
+  },
+]
+`;
+
+exports[`ViewDomain when handling an event with a created [true] and permanent [true] condition should publish ViewNotCreatedError to message bus 1`] = `
+Array [
+  DomainEvent {
+    "aggregate": Object {
+      "context": "context",
+      "id": "id",
+      "name": "name",
+    },
+    "causationId": "e64b576a-022e-4dd4-8c97-32408012f8d1",
+    "correlationId": "e64b576a-022e-4dd4-8c97-32408012f8d1",
+    "data": Object {
+      "error": [ViewNotCreatedError: View has not been created],
+      "message": DomainEvent {
+        "aggregate": Object {
+          "context": "context",
+          "id": "id",
+          "name": "name",
+        },
+        "causationId": "e64b576a-022e-4dd4-8c97-32408012f8d1",
+        "correlationId": "e64b576a-022e-4dd4-8c97-32408012f8d1",
+        "data": Object {
+          "data": "data",
+        },
+        "delay": 0,
+        "id": "e64b576a-022e-4dd4-8c97-32408012f8d1",
+        "mandatory": false,
+        "name": "eventName",
+        "timestamp": 2022-01-01T08:00:00.000Z,
+        "type": "event",
+      },
+    },
+    "delay": 0,
+    "id": "e64b576a-022e-4dd4-8c97-32408012f8d1.ViewNotCreatedError",
+    "mandatory": false,
+    "name": "ViewNotCreatedError",
+    "timestamp": 2022-01-01T08:00:00.000Z,
+    "type": "event",
+  },
+]
+`;
+
+exports[`ViewDomain when registering an event handler should add event subscription 1`] = `
+Object {
+  "aggregate": Object {
+    "context": "context",
+    "name": "name",
+  },
+  "handler": [Function],
+  "name": "context.name.eventName",
+}
+`;
+
+exports[`ViewDomain when registering an event handler should add subscriptions to topic 1`] = `
+Object {
+  "aggregate": Object {
+    "context": "context",
+    "name": "name",
+  },
+  "handler": [Function],
+  "name": "eventName",
+}
+`;
+
+exports[`ViewDomain when registering an event handler should become part of the domain 1`] = `
+Array [
+  ViewEventHandler {
+    "aggregate": Object {
+      "context": "context",
+      "name": "name",
+    },
+    "conditions": Object {},
+    "eventName": "eventName",
+    "getViewId": [Function],
+    "handler": [Function],
+    "loadOptions": Object {},
+    "saveOptions": Object {},
+    "view": Object {
+      "context": "context",
+      "name": "name",
+    },
+  },
+]
+`;
+
+exports[`ViewDomain when registering an event handler to multiple contexts should add event subscription 1`] = `
+Object {
+  "aggregate": Object {
+    "context": "context",
+    "name": "name",
+  },
+  "handler": [Function],
+  "name": "context.name.eventName",
+}
+`;
+
+exports[`ViewDomain when registering an event handler to multiple contexts should add subscriptions to topic 1`] = `
+Object {
+  "aggregate": Object {
+    "context": "context",
+    "name": "name",
+  },
+  "handler": [Function],
+  "name": "eventName",
+}
+`;
+
+exports[`ViewDomain when registering an event handler to multiple contexts should become part of the domain for each context 1`] = `
+Array [
+  ViewEventHandler {
+    "aggregate": Object {
+      "context": "context",
+      "name": "name",
+    },
+    "conditions": Object {},
+    "eventName": "eventName",
+    "getViewId": [Function],
+    "handler": [Function],
+    "loadOptions": Object {},
+    "saveOptions": Object {},
+    "view": Object {
+      "context": "context",
+      "name": "name",
+    },
+  },
+  ViewEventHandler {
+    "aggregate": Object {
+      "context": "secondary",
+      "name": "name",
+    },
+    "conditions": Object {},
+    "eventName": "eventName",
+    "getViewId": [Function],
+    "handler": [Function],
+    "loadOptions": Object {},
+    "saveOptions": Object {},
+    "view": Object {
+      "context": "context",
+      "name": "name",
+    },
+  },
+]
+`;
+
+exports[`ViewDomain when registering an event handler to multiple existing contexts should become part of the domain only once for each context 1`] = `
+Array [
+  ViewEventHandler {
+    "aggregate": Object {
+      "context": "context",
+      "name": "name",
+    },
+    "conditions": Object {},
+    "eventName": "eventName",
+    "getViewId": [Function],
+    "handler": [Function],
+    "loadOptions": Object {},
+    "saveOptions": Object {},
+    "view": Object {
+      "context": "context",
+      "name": "name",
+    },
+  },
+  ViewEventHandler {
+    "aggregate": Object {
+      "context": "secondary",
+      "name": "name",
+    },
+    "conditions": Object {},
+    "eventName": "eventName",
+    "getViewId": [Function],
+    "handler": [Function],
+    "loadOptions": Object {},
+    "saveOptions": Object {},
+    "view": Object {
+      "context": "context",
+      "name": "name",
+    },
+  },
+]
+`;
+
+exports[`ViewDomain when registering an existing event handler should not register a second handler on domain 1`] = `
+Array [
+  ViewEventHandler {
+    "aggregate": Object {
+      "context": "context",
+      "name": "name",
+    },
+    "conditions": Object {},
+    "eventName": "eventName",
+    "getViewId": [Function],
+    "handler": [Function],
+    "loadOptions": Object {},
+    "saveOptions": Object {},
+    "view": Object {
+      "context": "context",
+      "name": "name",
+    },
+  },
+]
+`;

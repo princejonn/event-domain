@@ -1,0 +1,56 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Saga when creating a saga with camelCase name should create saga 1`] = `
+Object {
+  "causationList": Array [],
+  "context": "default",
+  "destroyed": false,
+  "id": "id",
+  "messagesToDispatch": Array [],
+  "name": "camelCasedName",
+  "revision": 0,
+  "state": Object {},
+}
+`;
+
+exports[`Saga when dispatching a command should add the command in the dispatch list 1`] = `
+Array [
+  Command {
+    "aggregate": Object {
+      "context": "defaultContext",
+      "id": "2a553a74-0f84-4a7d-b91e-2902666db98c",
+      "name": "aggregateName",
+    },
+    "causationId": "fc2bd748-91e3-46ce-b5e5-6cdd2184122f",
+    "correlationId": "e64b576a-022e-4dd4-8c97-32408012f8d1",
+    "data": Object {},
+    "delay": 0,
+    "id": "fc2bd748-91e3-46ce-b5e5-6cdd2184122f",
+    "mandatory": true,
+    "name": "commandWithDestroy",
+    "timestamp": 2020-01-01T12:00:00.000Z,
+    "type": "command",
+  },
+]
+`;
+
+exports[`Saga when timing out an event should add the command in the dispatch list 1`] = `
+Array [
+  Timeout {
+    "aggregate": Object {
+      "context": "defaultContext",
+      "id": "2a553a74-0f84-4a7d-b91e-2902666db98c",
+      "name": "sagaName",
+    },
+    "causationId": "e64b576a-022e-4dd4-8c97-32408012f8d1",
+    "correlationId": "e64b576a-022e-4dd4-8c97-32408012f8d1",
+    "data": Object {},
+    "delay": 999,
+    "id": "e64b576a-022e-4dd4-8c97-32408012f8d1",
+    "mandatory": true,
+    "name": "eventWithDestroy",
+    "timestamp": 2020-01-01T08:00:00.000Z,
+    "type": "timeout",
+  },
+]
+`;

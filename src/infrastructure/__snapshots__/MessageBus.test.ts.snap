@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MessageBus subscribe should add subscriber 1`] = `
+Array [
+  Object {
+    "callback": [MockFunction],
+    "sub": Object {
+      "aggregate": Object {
+        "context": "context",
+        "name": "name",
+      },
+      "handler": [MockFunction],
+      "name": "event1",
+    },
+    "topic": Object {
+      "aggregate": Object {
+        "context": "context",
+        "name": "name",
+      },
+      "handler": [MockFunction],
+      "name": "event1",
+    },
+  },
+]
+`;

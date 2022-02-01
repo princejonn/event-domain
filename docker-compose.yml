@@ -1,0 +1,33 @@
+version: "3.7"
+
+services:
+  event_domain_mongo:
+    image: mongo
+    restart: always
+    container_name: event_domain_mongo
+    labels:
+      - mongo
+    ports:
+      - "27017:27017"
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=root
+      - MONGO_INITDB_ROOT_PASSWORD=example
+
+  event_domain_rabbitmq:
+    image: rabbitmq:3.8-management
+    restart: always
+    container_name: event_domain_rabbitmq
+    labels:
+      - rabbitmq
+    volumes:
+      - ../data/rabbitmq/mnesia:/var/lib/rabbitmq/mnesia/
+      - ../data/rabbitmq/log:/var/log/rabbitmq
+    ports:
+      - "5672:5672"
+      - "15672:15672"
+    networks:
+      - rabbitmq_go_net
+
+networks:
+  rabbitmq_go_net:
+    driver: bridge

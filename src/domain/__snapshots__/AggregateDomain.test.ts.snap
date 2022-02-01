@@ -1,0 +1,316 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AggregateDomain when failing to publish events should attempt to save events to store 1`] = `
+Array [
+  Object {
+    "events": Array [
+      DomainEvent {
+        "aggregate": Object {
+          "context": "defaultContext",
+          "id": "2a553a74-0f84-4a7d-b91e-2902666db98c",
+          "name": "aggregateName",
+        },
+        "causationId": "6c2e5bbd-6643-469d-92ba-f6a140d42cb4",
+        "correlationId": "e64b576a-022e-4dd4-8c97-32408012f8d1",
+        "data": Object {
+          "name": "hello",
+        },
+        "delay": 0,
+        "id": "e64b576a-022e-4dd4-8c97-32408012f8d1",
+        "mandatory": false,
+        "name": "eventWithData",
+        "timestamp": 2022-01-01T08:00:00.000Z,
+        "type": "event",
+      },
+    ],
+    "expectedEvents": Array [],
+  },
+]
+`;
+
+exports[`AggregateDomain when failing to publish events should save applied events to event store 1`] = `
+Object {
+  "defaultContext.aggregateName.2a553a74-0f84-4a7d-b91e-2902666db98c": Array [
+    DomainEvent {
+      "aggregate": Object {
+        "context": "defaultContext",
+        "id": "2a553a74-0f84-4a7d-b91e-2902666db98c",
+        "name": "aggregateName",
+      },
+      "causationId": "6c2e5bbd-6643-469d-92ba-f6a140d42cb4",
+      "correlationId": "e64b576a-022e-4dd4-8c97-32408012f8d1",
+      "data": Object {
+        "name": "hello",
+      },
+      "delay": 0,
+      "id": "e64b576a-022e-4dd4-8c97-32408012f8d1",
+      "mandatory": false,
+      "name": "eventWithData",
+      "timestamp": 2022-01-01T08:00:00.000Z,
+      "type": "event",
+    },
+  ],
+}
+`;
+
+exports[`AggregateDomain when handling a command should attempt to save events to store 1`] = `
+Array [
+  Object {
+    "events": Array [
+      DomainEvent {
+        "aggregate": Object {
+          "context": "defaultContext",
+          "id": "2a553a74-0f84-4a7d-b91e-2902666db98c",
+          "name": "aggregateName",
+        },
+        "causationId": "6c2e5bbd-6643-469d-92ba-f6a140d42cb4",
+        "correlationId": "e64b576a-022e-4dd4-8c97-32408012f8d1",
+        "data": Object {
+          "name": "hello",
+        },
+        "delay": 0,
+        "id": "e64b576a-022e-4dd4-8c97-32408012f8d1",
+        "mandatory": false,
+        "name": "eventWithData",
+        "timestamp": 2022-01-01T08:00:00.000Z,
+        "type": "event",
+      },
+    ],
+    "expectedEvents": Array [],
+  },
+]
+`;
+
+exports[`AggregateDomain when handling a command should publish applied events to message bus 1`] = `
+Array [
+  DomainEvent {
+    "aggregate": Object {
+      "context": "defaultContext",
+      "id": "2a553a74-0f84-4a7d-b91e-2902666db98c",
+      "name": "aggregateName",
+    },
+    "causationId": "6c2e5bbd-6643-469d-92ba-f6a140d42cb4",
+    "correlationId": "e64b576a-022e-4dd4-8c97-32408012f8d1",
+    "data": Object {
+      "name": "hello",
+    },
+    "delay": 0,
+    "id": "e64b576a-022e-4dd4-8c97-32408012f8d1",
+    "mandatory": false,
+    "name": "eventWithData",
+    "timestamp": 2022-01-01T08:00:00.000Z,
+    "type": "event",
+  },
+]
+`;
+
+exports[`AggregateDomain when handling a command should save applied events to event store 1`] = `
+Object {
+  "defaultContext.aggregateName.2a553a74-0f84-4a7d-b91e-2902666db98c": Array [
+    DomainEvent {
+      "aggregate": Object {
+        "context": "defaultContext",
+        "id": "2a553a74-0f84-4a7d-b91e-2902666db98c",
+        "name": "aggregateName",
+      },
+      "causationId": "6c2e5bbd-6643-469d-92ba-f6a140d42cb4",
+      "correlationId": "e64b576a-022e-4dd4-8c97-32408012f8d1",
+      "data": Object {
+        "name": "hello",
+      },
+      "delay": 0,
+      "id": "e64b576a-022e-4dd4-8c97-32408012f8d1",
+      "mandatory": false,
+      "name": "eventWithData",
+      "timestamp": 2022-01-01T08:00:00.000Z,
+      "type": "event",
+    },
+  ],
+}
+`;
+
+exports[`AggregateDomain when handling the same command twice should attempt to save command events to store twice 1`] = `
+Array [
+  Object {
+    "events": Array [
+      DomainEvent {
+        "aggregate": Object {
+          "context": "defaultContext",
+          "id": "2a553a74-0f84-4a7d-b91e-2902666db98c",
+          "name": "aggregateName",
+        },
+        "causationId": "6c2e5bbd-6643-469d-92ba-f6a140d42cb4",
+        "correlationId": "e64b576a-022e-4dd4-8c97-32408012f8d1",
+        "data": Object {
+          "name": "hello",
+        },
+        "delay": 0,
+        "id": "e64b576a-022e-4dd4-8c97-32408012f8d1",
+        "mandatory": false,
+        "name": "eventWithData",
+        "timestamp": 2022-01-01T08:00:00.000Z,
+        "type": "event",
+      },
+    ],
+    "expectedEvents": Array [],
+  },
+  Object {
+    "events": Array [
+      DomainEvent {
+        "aggregate": Object {
+          "context": "defaultContext",
+          "id": "2a553a74-0f84-4a7d-b91e-2902666db98c",
+          "name": "aggregateName",
+        },
+        "causationId": "6c2e5bbd-6643-469d-92ba-f6a140d42cb4",
+        "correlationId": "e64b576a-022e-4dd4-8c97-32408012f8d1",
+        "data": Object {
+          "name": "hello",
+        },
+        "delay": 0,
+        "id": "e64b576a-022e-4dd4-8c97-32408012f8d1",
+        "mandatory": false,
+        "name": "eventWithData",
+        "timestamp": 2022-01-01T08:00:00.000Z,
+        "type": "event",
+      },
+    ],
+    "expectedEvents": Array [
+      DomainEvent {
+        "aggregate": Object {
+          "context": "defaultContext",
+          "id": "2a553a74-0f84-4a7d-b91e-2902666db98c",
+          "name": "aggregateName",
+        },
+        "causationId": "6c2e5bbd-6643-469d-92ba-f6a140d42cb4",
+        "correlationId": "e64b576a-022e-4dd4-8c97-32408012f8d1",
+        "data": Object {
+          "name": "hello",
+        },
+        "delay": 0,
+        "id": "e64b576a-022e-4dd4-8c97-32408012f8d1",
+        "mandatory": false,
+        "name": "eventWithData",
+        "timestamp": 2022-01-01T08:00:00.000Z,
+        "type": "event",
+      },
+    ],
+  },
+]
+`;
+
+exports[`AggregateDomain when handling the same command twice should publish applied events to message bus twice 1`] = `
+Array [
+  DomainEvent {
+    "aggregate": Object {
+      "context": "defaultContext",
+      "id": "2a553a74-0f84-4a7d-b91e-2902666db98c",
+      "name": "aggregateName",
+    },
+    "causationId": "6c2e5bbd-6643-469d-92ba-f6a140d42cb4",
+    "correlationId": "e64b576a-022e-4dd4-8c97-32408012f8d1",
+    "data": Object {
+      "name": "hello",
+    },
+    "delay": 0,
+    "id": "e64b576a-022e-4dd4-8c97-32408012f8d1",
+    "mandatory": false,
+    "name": "eventWithData",
+    "timestamp": 2022-01-01T08:00:00.000Z,
+    "type": "event",
+  },
+  DomainEvent {
+    "aggregate": Object {
+      "context": "defaultContext",
+      "id": "2a553a74-0f84-4a7d-b91e-2902666db98c",
+      "name": "aggregateName",
+    },
+    "causationId": "6c2e5bbd-6643-469d-92ba-f6a140d42cb4",
+    "correlationId": "e64b576a-022e-4dd4-8c97-32408012f8d1",
+    "data": Object {
+      "name": "hello",
+    },
+    "delay": 0,
+    "id": "e64b576a-022e-4dd4-8c97-32408012f8d1",
+    "mandatory": false,
+    "name": "eventWithData",
+    "timestamp": 2022-01-01T08:00:00.000Z,
+    "type": "event",
+  },
+]
+`;
+
+exports[`AggregateDomain when handling the same command twice should save applied events to event store once 1`] = `
+Object {
+  "defaultContext.aggregateName.2a553a74-0f84-4a7d-b91e-2902666db98c": Array [
+    DomainEvent {
+      "aggregate": Object {
+        "context": "defaultContext",
+        "id": "2a553a74-0f84-4a7d-b91e-2902666db98c",
+        "name": "aggregateName",
+      },
+      "causationId": "6c2e5bbd-6643-469d-92ba-f6a140d42cb4",
+      "correlationId": "e64b576a-022e-4dd4-8c97-32408012f8d1",
+      "data": Object {
+        "name": "hello",
+      },
+      "delay": 0,
+      "id": "e64b576a-022e-4dd4-8c97-32408012f8d1",
+      "mandatory": false,
+      "name": "eventWithData",
+      "timestamp": 2022-01-01T08:00:00.000Z,
+      "type": "event",
+    },
+  ],
+}
+`;
+
+exports[`AggregateDomain when registering a command handler should add command subscription 1`] = `
+Object {
+  "aggregate": Object {
+    "context": "defaultContext",
+    "name": "aggregateName",
+  },
+  "handler": [Function],
+  "name": "commandWithData",
+}
+`;
+
+exports[`AggregateDomain when registering a command handler should add subscriptions to topic 1`] = `
+Object {
+  "aggregate": Object {
+    "context": "defaultContext",
+    "name": "aggregateName",
+  },
+  "handler": [Function],
+  "name": "commandWithData",
+}
+`;
+
+exports[`AggregateDomain when registering a command handler should become part of the domain 1`] = `
+Array [
+  AggregateCommandHandler {
+    "aggregate": Object {
+      "context": "defaultContext",
+      "name": "aggregateName",
+    },
+    "commandName": "commandWithData",
+    "conditions": Object {},
+    "handler": [Function],
+    "schema": "Joi.object()",
+  },
+]
+`;
+
+exports[`AggregateDomain when registering an event handler should become part of the domain 1`] = `
+Array [
+  AggregateEventHandler {
+    "aggregate": Object {
+      "context": "defaultContext",
+      "name": "aggregateName",
+    },
+    "eventName": "eventWithData",
+    "handler": [Function],
+  },
+]
+`;

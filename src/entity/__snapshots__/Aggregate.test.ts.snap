@@ -1,0 +1,62 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Aggregate when applying a command with data should add events to array 1`] = `
+Array [
+  DomainEvent {
+    "aggregate": Object {
+      "context": "defaultContext",
+      "id": "2a553a74-0f84-4a7d-b91e-2902666db98c",
+      "name": "aggregateName",
+    },
+    "causationId": "6c2e5bbd-6643-469d-92ba-f6a140d42cb4",
+    "correlationId": "e64b576a-022e-4dd4-8c97-32408012f8d1",
+    "data": Object {
+      "name": Object {
+        "first": "hello",
+        "foo": "bar",
+      },
+    },
+    "delay": 0,
+    "id": "e64b576a-022e-4dd4-8c97-32408012f8d1",
+    "mandatory": false,
+    "name": "eventWithData",
+    "timestamp": 2022-01-01T08:00:00.000Z,
+    "type": "event",
+  },
+]
+`;
+
+exports[`Aggregate when loading an existing event should add event list of loaded events 1`] = `
+Array [
+  DomainEvent {
+    "aggregate": Object {
+      "context": "defaultContext",
+      "id": "2a553a74-0f84-4a7d-b91e-2902666db98c",
+      "name": "aggregateName",
+    },
+    "causationId": "ce03d1ac-2f77-4941-88ce-2960aabf6400",
+    "correlationId": "2038c9e9-349e-4ac4-a750-cd474240c37e",
+    "data": Object {
+      "freddie": "mercury",
+    },
+    "delay": 0,
+    "id": "aed46332-a369-48b7-a100-1a6bbdd13552",
+    "mandatory": true,
+    "name": "eventWithData",
+    "timestamp": 2001-02-03T04:05:06.789Z,
+    "type": "event",
+  },
+]
+`;
+
+exports[`Aggregate when loading an existing event should handle event and set state 1`] = `
+Object {
+  "OBJ": Object {
+    "OBJ": Object {
+      "NUM": 123456,
+    },
+    "STR": "value",
+  },
+  "freddie": "mercury",
+}
+`;

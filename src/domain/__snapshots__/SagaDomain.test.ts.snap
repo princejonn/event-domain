@@ -1,0 +1,292 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SagaDomain when event handler throws a permanent domain error should publish a non-mandatory error event to message bus 1`] = `
+DomainEvent {
+  "aggregate": Object {
+    "context": "defaultContext",
+    "id": "2a553a74-0f84-4a7d-b91e-2902666db98c",
+    "name": "sagaName",
+  },
+  "causationId": "e64b576a-022e-4dd4-8c97-32408012f8d1",
+  "correlationId": "e64b576a-022e-4dd4-8c97-32408012f8d1",
+  "data": Object {
+    "error": [TestError: error],
+    "message": DomainEvent {
+      "aggregate": Object {
+        "context": "defaultContext",
+        "id": "2a553a74-0f84-4a7d-b91e-2902666db98c",
+        "name": "aggregateName",
+      },
+      "causationId": "e64b576a-022e-4dd4-8c97-32408012f8d1",
+      "correlationId": "e64b576a-022e-4dd4-8c97-32408012f8d1",
+      "data": Object {
+        "name": "hello",
+      },
+      "delay": 0,
+      "id": "e64b576a-022e-4dd4-8c97-32408012f8d1",
+      "mandatory": false,
+      "name": "eventWithData",
+      "timestamp": 2020-01-01T12:00:00.000Z,
+      "type": "event",
+    },
+  },
+  "delay": 0,
+  "id": "e64b576a-022e-4dd4-8c97-32408012f8d1.TestError",
+  "mandatory": false,
+  "name": "TestError",
+  "timestamp": 2022-01-01T08:00:00.000Z,
+  "type": "event",
+}
+`;
+
+exports[`SagaDomain when handling an event and failing to publish commands should publish the dispatched commands to message bus 1`] = `
+Object {
+  "messages": Array [
+    Command {
+      "aggregate": Object {
+        "context": "defaultContext",
+        "id": "2a553a74-0f84-4a7d-b91e-2902666db98c",
+        "name": "aggregateName",
+      },
+      "causationId": "e64b576a-022e-4dd4-8c97-32408012f8d1",
+      "correlationId": "e64b576a-022e-4dd4-8c97-32408012f8d1",
+      "data": Object {},
+      "delay": 0,
+      "id": "e64b576a-022e-4dd4-8c97-32408012f8d1",
+      "mandatory": true,
+      "name": "commandDispatchFromHandler",
+      "timestamp": 2022-01-01T08:00:00.000Z,
+      "type": "command",
+    },
+  ],
+}
+`;
+
+exports[`SagaDomain when handling an event and failing to publish commands should save dispatched commands to saga store 1`] = `
+Array [
+  Object {
+    "causation": DomainEvent {
+      "aggregate": Object {
+        "context": "defaultContext",
+        "id": "2a553a74-0f84-4a7d-b91e-2902666db98c",
+        "name": "aggregateName",
+      },
+      "causationId": "e64b576a-022e-4dd4-8c97-32408012f8d1",
+      "correlationId": "e64b576a-022e-4dd4-8c97-32408012f8d1",
+      "data": Object {},
+      "delay": 0,
+      "id": "e64b576a-022e-4dd4-8c97-32408012f8d1",
+      "mandatory": false,
+      "name": "eventWithDispatch",
+      "timestamp": 2020-01-01T12:00:00.000Z,
+      "type": "event",
+    },
+    "options": Object {},
+    "saga": Object {
+      "causationList": Array [
+        "e64b576a-022e-4dd4-8c97-32408012f8d1",
+      ],
+      "context": "defaultContext",
+      "destroyed": false,
+      "id": "2a553a74-0f84-4a7d-b91e-2902666db98c",
+      "messagesToDispatch": Array [
+        Command {
+          "aggregate": Object {
+            "context": "defaultContext",
+            "id": "2a553a74-0f84-4a7d-b91e-2902666db98c",
+            "name": "aggregateName",
+          },
+          "causationId": "e64b576a-022e-4dd4-8c97-32408012f8d1",
+          "correlationId": "e64b576a-022e-4dd4-8c97-32408012f8d1",
+          "data": Object {},
+          "delay": 0,
+          "id": "e64b576a-022e-4dd4-8c97-32408012f8d1",
+          "mandatory": true,
+          "name": "commandDispatchFromHandler",
+          "timestamp": 2022-01-01T08:00:00.000Z,
+          "type": "command",
+        },
+      ],
+      "name": "sagaName",
+      "revision": 0,
+      "state": Object {},
+    },
+  },
+]
+`;
+
+exports[`SagaDomain when handling an event on a new saga should publish the dispatched commands to message bus 1`] = `
+Command {
+  "aggregate": Object {
+    "context": "defaultContext",
+    "id": "2a553a74-0f84-4a7d-b91e-2902666db98c",
+    "name": "aggregateName",
+  },
+  "causationId": "e64b576a-022e-4dd4-8c97-32408012f8d1",
+  "correlationId": "e64b576a-022e-4dd4-8c97-32408012f8d1",
+  "data": Object {},
+  "delay": 0,
+  "id": "e64b576a-022e-4dd4-8c97-32408012f8d1",
+  "mandatory": true,
+  "name": "commandDispatchFromHandler",
+  "timestamp": 2022-01-01T08:00:00.000Z,
+  "type": "command",
+}
+`;
+
+exports[`SagaDomain when handling an event on a new saga should resolve the promise with a saga that has a cleared list of commands 1`] = `
+Object {
+  "defaultContext.sagaName.2a553a74-0f84-4a7d-b91e-2902666db98c": Object {
+    "causationList": Array [
+      "e64b576a-022e-4dd4-8c97-32408012f8d1",
+    ],
+    "context": "defaultContext",
+    "destroyed": false,
+    "id": "2a553a74-0f84-4a7d-b91e-2902666db98c",
+    "messagesToDispatch": Array [],
+    "name": "sagaName",
+    "revision": 2,
+    "state": Object {},
+  },
+}
+`;
+
+exports[`SagaDomain when handling an event on a new saga should save the dispatched commands to saga store 1`] = `
+Command {
+  "aggregate": Object {
+    "context": "defaultContext",
+    "id": "2a553a74-0f84-4a7d-b91e-2902666db98c",
+    "name": "aggregateName",
+  },
+  "causationId": "e64b576a-022e-4dd4-8c97-32408012f8d1",
+  "correlationId": "e64b576a-022e-4dd4-8c97-32408012f8d1",
+  "data": Object {},
+  "delay": 0,
+  "id": "e64b576a-022e-4dd4-8c97-32408012f8d1",
+  "mandatory": true,
+  "name": "commandDispatchFromHandler",
+  "timestamp": 2022-01-01T08:00:00.000Z,
+  "type": "command",
+}
+`;
+
+exports[`SagaDomain when registering an event handler should add event subscription 1`] = `
+Object {
+  "aggregate": Object {
+    "context": "defaultContext",
+    "name": "sagaName",
+  },
+  "handler": [Function],
+  "name": "defaultContext.aggregateName.eventWithData",
+}
+`;
+
+exports[`SagaDomain when registering an event handler should add subscriptions to topic 1`] = `
+Object {
+  "aggregate": Object {
+    "context": "defaultContext",
+    "name": "aggregateName",
+  },
+  "handler": [Function],
+  "name": "eventWithData",
+}
+`;
+
+exports[`SagaDomain when registering an event handler should become part of the domain 1`] = `
+Array [
+  SagaEventHandler {
+    "aggregate": Object {
+      "context": "defaultContext",
+      "name": "aggregateName",
+    },
+    "conditions": Object {},
+    "eventName": "eventWithData",
+    "getSagaId": [Function],
+    "handler": [Function],
+    "saga": Object {
+      "context": "defaultContext",
+      "name": "sagaName",
+    },
+    "saveOptions": Object {},
+  },
+]
+`;
+
+exports[`SagaDomain when registering an event handler with multiple contexts should add event subscription for each context 1`] = `
+Object {
+  "aggregate": Object {
+    "context": "defaultContext",
+    "name": "sagaName",
+  },
+  "handler": [Function],
+  "name": "defaultContext.aggregateName.eventWithTimeout",
+}
+`;
+
+exports[`SagaDomain when registering an event handler with multiple contexts should add event subscription for each context 2`] = `
+Object {
+  "aggregate": Object {
+    "context": "defaultContext",
+    "name": "sagaName",
+  },
+  "handler": [Function],
+  "name": "anotherContext.aggregateName.eventWithTimeout",
+}
+`;
+
+exports[`SagaDomain when registering an event handler with multiple contexts should add subscriptions to topic for each context 1`] = `
+Object {
+  "aggregate": Object {
+    "context": "defaultContext",
+    "name": "aggregateName",
+  },
+  "handler": [Function],
+  "name": "eventWithTimeout",
+}
+`;
+
+exports[`SagaDomain when registering an event handler with multiple contexts should add subscriptions to topic for each context 2`] = `
+Object {
+  "aggregate": Object {
+    "context": "anotherContext",
+    "name": "aggregateName",
+  },
+  "handler": [Function],
+  "name": "eventWithTimeout",
+}
+`;
+
+exports[`SagaDomain when registering an event handler with multiple contexts should become part of the domain for each context 1`] = `
+Array [
+  SagaEventHandler {
+    "aggregate": Object {
+      "context": "defaultContext",
+      "name": "aggregateName",
+    },
+    "conditions": Object {},
+    "eventName": "eventWithTimeout",
+    "getSagaId": [Function],
+    "handler": [Function],
+    "saga": Object {
+      "context": "defaultContext",
+      "name": "sagaName",
+    },
+    "saveOptions": Object {},
+  },
+  SagaEventHandler {
+    "aggregate": Object {
+      "context": "anotherContext",
+      "name": "aggregateName",
+    },
+    "conditions": Object {},
+    "eventName": "eventWithTimeout",
+    "getSagaId": [Function],
+    "handler": [Function],
+    "saga": Object {
+      "context": "defaultContext",
+      "name": "sagaName",
+    },
+    "saveOptions": Object {},
+  },
+]
+`;

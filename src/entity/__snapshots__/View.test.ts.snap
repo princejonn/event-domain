@@ -1,0 +1,259 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`View when adding a removed item to an array out of order should match snapshot 1`] = `
+Object {
+  "causationList": Array [],
+  "context": "viewContext",
+  "destroyed": false,
+  "id": "2a553a74-0f84-4a7d-b91e-2902666db98c",
+  "metaState": Object {
+    "path1": Array [
+      Object {
+        "r": false,
+        "t": 2022-01-01T08:02:00.000Z,
+        "v": "hello world",
+      },
+    ],
+  },
+  "name": "viewName",
+  "revision": 0,
+  "state": Object {
+    "path1": Array [
+      "hello world",
+    ],
+  },
+}
+`;
+
+exports[`View when adding a removed item to an array should match snapshot 1`] = `
+Object {
+  "causationList": Array [],
+  "context": "viewContext",
+  "destroyed": false,
+  "id": "2a553a74-0f84-4a7d-b91e-2902666db98c",
+  "metaState": Object {
+    "path1": Array [
+      Object {
+        "r": false,
+        "t": 2022-01-01T08:02:00.000Z,
+        "v": "hello world",
+      },
+    ],
+  },
+  "name": "viewName",
+  "revision": 0,
+  "state": Object {
+    "path1": Array [
+      "hello world",
+    ],
+  },
+}
+`;
+
+exports[`View when adding an item to an array should match snapshot 1`] = `
+Object {
+  "causationList": Array [],
+  "context": "viewContext",
+  "destroyed": false,
+  "id": "2a553a74-0f84-4a7d-b91e-2902666db98c",
+  "metaState": Object {
+    "path1": Array [
+      Object {
+        "r": false,
+        "t": 2022-01-01T08:00:00.000Z,
+        "v": "hello world",
+      },
+    ],
+  },
+  "name": "viewName",
+  "revision": 0,
+  "state": Object {
+    "path1": Array [
+      "hello world",
+    ],
+  },
+}
+`;
+
+exports[`View when adding the same item to an array twice should match snapshot 1`] = `
+Object {
+  "causationList": Array [],
+  "context": "viewContext",
+  "destroyed": false,
+  "id": "2a553a74-0f84-4a7d-b91e-2902666db98c",
+  "metaState": Object {
+    "path1": Array [
+      Object {
+        "r": false,
+        "t": 2022-01-01T08:01:00.000Z,
+        "v": "hello world",
+      },
+    ],
+  },
+  "name": "viewName",
+  "revision": 0,
+  "state": Object {
+    "path1": Array [
+      "hello world",
+    ],
+  },
+}
+`;
+
+exports[`View when adding the same object to an array twice should match snapshot 1`] = `
+Object {
+  "causationList": Array [],
+  "context": "viewContext",
+  "destroyed": false,
+  "id": "2a553a74-0f84-4a7d-b91e-2902666db98c",
+  "metaState": Object {
+    "path1": Array [
+      Object {
+        "r": false,
+        "t": 2022-01-01T08:01:00.000Z,
+        "v": Object {
+          "hello": "world",
+        },
+      },
+    ],
+  },
+  "name": "viewName",
+  "revision": 0,
+  "state": Object {
+    "path1": Array [
+      Object {
+        "hello": "world",
+      },
+    ],
+  },
+}
+`;
+
+exports[`View when destroying a view should match snapshot 1`] = `
+Object {
+  "causationList": Array [],
+  "context": "viewContext",
+  "destroyed": true,
+  "id": "2a553a74-0f84-4a7d-b91e-2902666db98c",
+  "metaState": Object {},
+  "name": "viewName",
+  "revision": 0,
+  "state": Object {},
+}
+`;
+
+exports[`View when overwriting state in order should match snapshot 1`] = `
+Object {
+  "causationList": Array [],
+  "context": "viewContext",
+  "destroyed": false,
+  "id": "2a553a74-0f84-4a7d-b91e-2902666db98c",
+  "metaState": Object {
+    "path1": Object {
+      "r": false,
+      "t": 2022-01-01T08:01:00.000Z,
+      "v": "foo bar",
+    },
+  },
+  "name": "viewName",
+  "revision": 0,
+  "state": Object {
+    "path1": "foo bar",
+  },
+}
+`;
+
+exports[`View when overwriting state out of order should match snapshot 1`] = `
+Object {
+  "causationList": Array [],
+  "context": "viewContext",
+  "destroyed": false,
+  "id": "2a553a74-0f84-4a7d-b91e-2902666db98c",
+  "metaState": Object {
+    "path1": Object {
+      "r": false,
+      "t": 2022-01-01T08:01:00.000Z,
+      "v": "foo bar",
+    },
+  },
+  "name": "viewName",
+  "revision": 0,
+  "state": Object {
+    "path1": "foo bar",
+  },
+}
+`;
+
+exports[`View when removing a matching item from an array should match snapshot 1`] = `
+Object {
+  "causationList": Array [],
+  "context": "viewContext",
+  "destroyed": false,
+  "id": "2a553a74-0f84-4a7d-b91e-2902666db98c",
+  "metaState": Object {
+    "path1": Array [
+      Object {
+        "r": true,
+        "t": 2022-01-01T08:01:00.000Z,
+        "v": Object {
+          "hello": "world",
+          "id": 1,
+        },
+      },
+    ],
+  },
+  "name": "viewName",
+  "revision": 0,
+  "state": Object {
+    "path1": Array [],
+  },
+}
+`;
+
+exports[`View when removing an existing item from an array should match snapshot 1`] = `
+Object {
+  "causationList": Array [],
+  "context": "viewContext",
+  "destroyed": false,
+  "id": "2a553a74-0f84-4a7d-b91e-2902666db98c",
+  "metaState": Object {
+    "path1": Array [
+      Object {
+        "r": true,
+        "t": 2022-01-01T08:01:00.000Z,
+        "v": "hello world",
+      },
+    ],
+  },
+  "name": "viewName",
+  "revision": 0,
+  "state": Object {
+    "path1": Array [],
+  },
+}
+`;
+
+exports[`View when setting state should match snapshot 1`] = `
+Object {
+  "causationList": Array [],
+  "context": "viewContext",
+  "destroyed": false,
+  "id": "2a553a74-0f84-4a7d-b91e-2902666db98c",
+  "metaState": Object {
+    "path1": Object {
+      "path2": Object {
+        "r": false,
+        "t": 2022-01-01T08:00:00.000Z,
+        "v": "hello world",
+      },
+    },
+  },
+  "name": "viewName",
+  "revision": 0,
+  "state": Object {
+    "path1": Object {
+      "path2": "hello world",
+    },
+  },
+}
+`;

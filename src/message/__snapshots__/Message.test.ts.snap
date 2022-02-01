@@ -1,0 +1,117 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Message should convert timestamp to Date when string 1`] = `
+TestMessage {
+  "aggregate": Object {
+    "context": "context",
+    "id": "id",
+    "name": "name",
+  },
+  "causationId": "e64b576a-022e-4dd4-8c97-32408012f8d1",
+  "correlationId": "e64b576a-022e-4dd4-8c97-32408012f8d1",
+  "data": Object {},
+  "delay": 0,
+  "id": "e64b576a-022e-4dd4-8c97-32408012f8d1",
+  "mandatory": false,
+  "name": "name",
+  "timestamp": 2000-10-10T09:00:00.888Z,
+  "type": "unknown",
+}
+`;
+
+exports[`Message should create a message 1`] = `
+TestMessage {
+  "aggregate": Object {
+    "context": "context",
+    "id": "id",
+    "name": "name",
+  },
+  "causationId": "e64b576a-022e-4dd4-8c97-32408012f8d1",
+  "correlationId": "e64b576a-022e-4dd4-8c97-32408012f8d1",
+  "data": Object {},
+  "delay": 0,
+  "id": "e64b576a-022e-4dd4-8c97-32408012f8d1",
+  "mandatory": false,
+  "name": "name",
+  "timestamp": 2022-01-01T08:00:00.000Z,
+  "type": "unknown",
+}
+`;
+
+exports[`Message should fall back to causation 1`] = `
+TestMessage {
+  "aggregate": Object {
+    "context": "context",
+    "id": "id",
+    "name": "name",
+  },
+  "causationId": "9bdbf988-c405-4e07-bf43-e30a10c8ed9a",
+  "correlationId": "dd514fa0-08eb-404e-993e-a9687977bd23",
+  "data": Object {},
+  "delay": 0,
+  "id": "e64b576a-022e-4dd4-8c97-32408012f8d1",
+  "mandatory": false,
+  "name": "name",
+  "timestamp": 2022-01-01T08:00:00.000Z,
+  "type": "unknown",
+}
+`;
+
+exports[`Message should prioritize options over causation 1`] = `
+TestMessage {
+  "aggregate": Object {
+    "context": "context",
+    "id": "id",
+    "name": "name",
+  },
+  "causationId": "83863312-21d6-46a6-b34d-1fb660de5bea",
+  "correlationId": "97d2378f-43d1-4446-88b4-bcd4cb7aa44b",
+  "data": Object {},
+  "delay": 0,
+  "id": "e64b576a-022e-4dd4-8c97-32408012f8d1",
+  "mandatory": false,
+  "name": "name",
+  "timestamp": 2022-01-01T08:00:00.000Z,
+  "type": "unknown",
+}
+`;
+
+exports[`Message should respect options 1`] = `
+TestMessage {
+  "aggregate": Object {
+    "context": "context",
+    "id": "id",
+    "name": "name",
+  },
+  "causationId": "83863312-21d6-46a6-b34d-1fb660de5bea",
+  "correlationId": "97d2378f-43d1-4446-88b4-bcd4cb7aa44b",
+  "data": Object {
+    "value": 1,
+  },
+  "delay": 999,
+  "id": "8a7d01b6-dc4c-42a2-a444-4f4003747994",
+  "mandatory": true,
+  "name": "name",
+  "timestamp": 1999-01-01T00:00:00.000Z,
+  "type": "event",
+}
+`;
+
+exports[`Message should set id as correlation by default 1`] = `
+TestMessage {
+  "aggregate": Object {
+    "context": "context",
+    "id": "id",
+    "name": "name",
+  },
+  "causationId": "bacbc463-f3dc-4978-a719-8bcdddb54931",
+  "correlationId": "e64b576a-022e-4dd4-8c97-32408012f8d1",
+  "data": Object {},
+  "delay": 0,
+  "id": "bacbc463-f3dc-4978-a719-8bcdddb54931",
+  "mandatory": false,
+  "name": "name",
+  "timestamp": 2022-01-01T08:00:00.000Z,
+  "type": "unknown",
+}
+`;

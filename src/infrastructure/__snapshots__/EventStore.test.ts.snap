@@ -1,0 +1,82 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`EventStore when loading events from store should load all events for aggregate 1`] = `
+Object {
+  "context": "defaultContext",
+  "destroyed": false,
+  "events": Array [
+    DomainEvent {
+      "aggregate": Object {
+        "context": "defaultContext",
+        "id": "2a553a74-0f84-4a7d-b91e-2902666db98c",
+        "name": "aggregateName",
+      },
+      "causationId": "86e9a7ee-7455-4438-9c61-7e41bd0191d5",
+      "correlationId": "e64b576a-022e-4dd4-8c97-32408012f8d1",
+      "data": Object {
+        "eventData": true,
+      },
+      "delay": 0,
+      "id": "6d35d053-fc89-4ee5-93d6-87c0ceecb8b3",
+      "mandatory": false,
+      "name": "event1",
+      "timestamp": 2022-01-01T08:00:00.000Z,
+      "type": "event",
+    },
+  ],
+  "id": "2a553a74-0f84-4a7d-b91e-2902666db98c",
+  "name": "aggregateName",
+  "numberOfLoadedEvents": 1,
+  "state": Object {
+    "eventData": true,
+  },
+}
+`;
+
+exports[`EventStore when saving events to store should resolve the appended events 1`] = `
+Array [
+  DomainEvent {
+    "aggregate": Object {
+      "context": "defaultContext",
+      "id": "2a553a74-0f84-4a7d-b91e-2902666db98c",
+      "name": "aggregateName",
+    },
+    "causationId": "6c2e5bbd-6643-469d-92ba-f6a140d42cb4",
+    "correlationId": "e64b576a-022e-4dd4-8c97-32408012f8d1",
+    "data": Object {
+      "name": "hello",
+    },
+    "delay": 0,
+    "id": "e64b576a-022e-4dd4-8c97-32408012f8d1",
+    "mandatory": false,
+    "name": "eventWithData",
+    "timestamp": 2022-01-01T08:00:00.000Z,
+    "type": "event",
+  },
+]
+`;
+
+exports[`EventStore when saving events to store should save the causation events to the store 1`] = `
+Object {
+  "defaultContext.aggregateName.2a553a74-0f84-4a7d-b91e-2902666db98c": Array [
+    DomainEvent {
+      "aggregate": Object {
+        "context": "defaultContext",
+        "id": "2a553a74-0f84-4a7d-b91e-2902666db98c",
+        "name": "aggregateName",
+      },
+      "causationId": "6c2e5bbd-6643-469d-92ba-f6a140d42cb4",
+      "correlationId": "e64b576a-022e-4dd4-8c97-32408012f8d1",
+      "data": Object {
+        "name": "hello",
+      },
+      "delay": 0,
+      "id": "e64b576a-022e-4dd4-8c97-32408012f8d1",
+      "mandatory": false,
+      "name": "eventWithData",
+      "timestamp": 2022-01-01T08:00:00.000Z,
+      "type": "event",
+    },
+  ],
+}
+`;

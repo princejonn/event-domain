@@ -1,0 +1,61 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SagaStore clearMessagesToDispatch should successfully clear list of commands 1`] = `
+Object {
+  "causationList": Array [
+    "6d35d053-fc89-4ee5-93d6-87c0ceecb8b3",
+  ],
+  "context": "sagaContext",
+  "destroyed": false,
+  "id": "2a553a74-0f84-4a7d-b91e-2902666db98c",
+  "messagesToDispatch": Array [],
+  "name": "sagaName",
+  "revision": 2,
+  "state": Object {},
+}
+`;
+
+exports[`SagaStore load should load a new saga 1`] = `
+Object {
+  "causationList": Array [],
+  "context": "sagaContext",
+  "destroyed": false,
+  "id": "2a553a74-0f84-4a7d-b91e-2902666db98c",
+  "messagesToDispatch": Array [],
+  "name": "sagaName",
+  "revision": 0,
+  "state": Object {},
+}
+`;
+
+exports[`SagaStore load should load an existing saga 1`] = `
+Object {
+  "causationList": Array [
+    "6d35d053-fc89-4ee5-93d6-87c0ceecb8b3",
+  ],
+  "context": "sagaContext",
+  "destroyed": false,
+  "id": "2a553a74-0f84-4a7d-b91e-2902666db98c",
+  "messagesToDispatch": Array [],
+  "name": "sagaName",
+  "revision": 1,
+  "state": Object {
+    "exists": true,
+  },
+}
+`;
+
+exports[`SagaStore save should save a saga 1`] = `
+Object {
+  "causationList": Array [
+    "6d35d053-fc89-4ee5-93d6-87c0ceecb8b3",
+  ],
+  "context": "sagaContext",
+  "destroyed": false,
+  "id": "2a553a74-0f84-4a7d-b91e-2902666db98c",
+  "messagesToDispatch": Array [],
+  "name": "sagaName",
+  "revision": 1,
+  "state": Object {},
+}
+`;

@@ -1,0 +1,48 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ViewStore load should load a new view 1`] = `
+Object {
+  "causationList": Array [],
+  "context": "viewContext",
+  "destroyed": false,
+  "id": "2a553a74-0f84-4a7d-b91e-2902666db98c",
+  "metaState": Object {},
+  "name": "viewName",
+  "revision": 0,
+  "state": Object {},
+}
+`;
+
+exports[`ViewStore load should load an existing view 1`] = `
+Object {
+  "causationList": Array [
+    "6d35d053-fc89-4ee5-93d6-87c0ceecb8b3",
+  ],
+  "context": "viewContext",
+  "destroyed": false,
+  "id": "2a553a74-0f84-4a7d-b91e-2902666db98c",
+  "metaState": Object {},
+  "name": "viewName",
+  "revision": 1,
+  "state": Object {
+    "exists": true,
+  },
+}
+`;
+
+exports[`ViewStore save should save a view 1`] = `
+Object {
+  "causationList": Array [
+    "6d35d053-fc89-4ee5-93d6-87c0ceecb8b3",
+  ],
+  "context": "viewContext",
+  "destroyed": false,
+  "id": "2a553a74-0f84-4a7d-b91e-2902666db98c",
+  "metaState": Object {},
+  "name": "viewName",
+  "revision": 1,
+  "state": Object {
+    "data": true,
+  },
+}
+`;
